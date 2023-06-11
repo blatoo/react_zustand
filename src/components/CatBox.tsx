@@ -6,6 +6,9 @@ export const CatBox = () => {
   const smallCats = useCatStore((state) => state.cats.smallCats);
   const increaseBigCats = useCatStore((state) => state.increaseBigCats);
   const increaseSmallCats = useCatStore((state) => state.increaseSmallCats);
+  const summary = useCatStore((state) => state.summary);
+
+  console.log(summary());
 
   return (
     <div className="box">

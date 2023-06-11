@@ -8,10 +8,11 @@ type TCatStoreState = {
   };
   increaseBigCats: () => void;
   increaseSmallCats: () => void;
+  summary: () => void;
 };
 
 export const useCatStore = create<TCatStoreState>()(
-  immer((set) => ({
+  immer((set, get) => ({
     cats: {
       bigCats: 0,
       smallCats: 0,
@@ -24,5 +25,9 @@ export const useCatStore = create<TCatStoreState>()(
       set((state) => {
         state.cats.smallCats++;
       }),
+    summary: () => {
+      const total = get().cats.bigCats + get().cats.smallCats;
+      return `There are ${total} cats in total. `;
+    },
   }))
 );
