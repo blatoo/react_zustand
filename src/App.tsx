@@ -1,5 +1,6 @@
 import { CatBox } from "./components/CatBox";
 import { CatBox2 } from "./components/CatBox2";
+import { CatController } from "./components/CatController";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div>
         <CatBox />
         <CatBox2 />
+        <CatController />
       </div>
     </div>
   );
